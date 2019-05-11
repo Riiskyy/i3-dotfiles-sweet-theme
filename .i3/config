@@ -54,7 +54,7 @@ bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
 bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 # bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
-bindsym $mod+F3 exec dolphin
+bindsym $mod+F3 exec thunar
 bindsym $mod+F5 exec $terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
@@ -183,7 +183,7 @@ workspace $ws4 output DisplayPort-0
 workspace $ws5 output HDMI-A-1
 
 # Open applications on specific workspaces
-assign [class="dolphin"] $ws1
+assign [class="Thunar"] $ws1
 assign [class="Chromium"] $ws2
 assign [class="Steam"] $ws3
 assign [class="Code"] $ws4
@@ -267,7 +267,7 @@ exec --no-startup-id clipitd
 exec --no-startup-id gpmdp
 exec --no-startup-id $terminal
 exec --no-startup-id chromium
-exec --no-startup-id dolphin
+exec --no-startup-id thunar
 exec --no-startup-id steam
 exec --no-startup-id discord
 exec --no-startup-id variety
@@ -340,7 +340,7 @@ gaps outer -2
 # Smart gaps (gaps used if only more than one container on the workspace)
 # smart_gaps on
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
