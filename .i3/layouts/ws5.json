@@ -1,0 +1,109 @@
+{
+    "border": "none",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1034,
+       "width": 941,
+       "x": 12,
+       "y": 12
+    },
+    "name": "Dying To Believe - Parkway Drive",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^Google\\ Play\\ Music\\ Desktop\\ Player$",
+       "instance": "^google\\ play\\ music\\ desktop\\ player$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 0.7,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1054,
+                       "width": 940,
+                       "x": 968,
+                       "y": 13
+                    },
+                    "name": "Discord Updater",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       "class": "discord",
+                       "window_role": "^browser\\-window$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 0.7,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1054,
+                       "width": 940,
+                       "x": 968,
+                       "y": 13
+                    },
+                    "name": "Activity - Discord",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       "class": "^discord$",
+                       "instance": "^discord$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 388,
+               "width": 644,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cava",
+            "percent": 0.3,
+            "swallows": [
+               {
+               "class": "^URxvt$",
+               "instance": "^cava$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

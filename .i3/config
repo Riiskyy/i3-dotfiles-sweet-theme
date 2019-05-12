@@ -136,11 +136,11 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 :1
-set $ws2 :2
-set $ws3 :3
-set $ws4 :4
-set $ws5 :5
+set $ws1 1:
+set $ws2 2:
+set $ws3 3:
+set $ws4 4:
+set $ws5 5:
 set $ws6 6
 set $ws7 7
 set $ws8 8
@@ -182,10 +182,16 @@ workspace $ws3 output DisplayPort-0
 workspace $ws4 output DisplayPort-0
 workspace $ws5 output HDMI-A-1
 
+# Restore layouts for workspaces and switch back to $ws2
+exec --no-startup-id "i3-msg 'workspace 1:; append_layout /home/tom/.i3/layouts/ws1.json'"
+exec --no-startup-id "i3-msg 'workspace 5:; append_layout /home/tom/.i3/layouts/ws5.json'"
+
 # Open applications on specific workspaces
 assign [class="Thunar"] $ws1
+assign [instance="gotop"] $ws1
 assign [class="Chromium"] $ws2
 assign [class="Steam"] $ws3
+assign [class="Lutris"] $ws3
 assign [class="Code"] $ws4
 assign [class="Google Play Music Desktop Player"] $ws5
 assign [class="discord"] $ws5
@@ -198,9 +204,11 @@ for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floRRating enable border normal
 for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Steam"] floating enable border normal
+for_window [class="Lutris"] floating enable
+for_window [class="Wine"] floating enable
+# for_window [class="discord"] no_focus
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -265,13 +273,13 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipitd
 exec --no-startup-id gpmdp
-exec --no-startup-id $terminal
+exec --no-startup-id $terminal -name "home"
 exec --no-startup-id chromium
 exec --no-startup-id thunar
-exec --no-startup-id steam
 exec --no-startup-id discord
 exec --no-startup-id variety
-exec --no-startup-id cava
+exec --no-startup-id urxvt -name "gotop" -hold -e gotop -m
+exec --no-startup-id "sleep 3; urxvt -name cava -hold -e cava"
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show run -theme onedark -lines 5 -opacity "60"
@@ -296,19 +304,19 @@ bar {
     bindsym button4 nop
     bindsym button5 nop
     font pango:InconsolataLGC Nerd Font Bold 9
-    strip_workspace_numbers yes
+    # strip_workspace_numbers yes
 
     colors {
         background $bg-color
         statusline #F9FAF9
         separator  #454947
 
-        #                  border  	      		background         	text
+        #                  border  	      	background              text
         focused_workspace  $bg-color          	$bg-color          	$text-color
         active_workspace   $bg-color          	$bg-color          	$text-color
         inactive_workspace $inactive-bg-color 	$inactive-bg-color 	$inactive-text-color
         urgent_workspace   $urgent-bg-color   	$urgent-bg-color   	$bg-color
-		binding_mode       $bg-color   			$binding-bg-color  	$binding-text-color
+	binding_mode       $bg-color            $binding-bg-color  	$binding-text-color
     }
 }
 

@@ -1,0 +1,79 @@
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 388,
+       "width": 644,
+       "x": 0,
+       "y": 0
+    },
+    "name": "tom@home:~",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^URxvt$",
+        "instance": "^home$"
+       }
+    ],
+    "type": "con"
+}
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "layout": "splitv",
+            "floating": "auto_off",
+            "geometry": {
+               "height": 388,
+               "width": 644,
+               "x": 0,
+               "y": 0
+            },
+            "name": "gotop",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^URxvt$",
+               "instance": "^gotop$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "floating": "auto_off",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1032,
+                       "width": 939,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "layouts - File Manager",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       "class": "^Thunar$",
+                       "instance": "^thunar$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
