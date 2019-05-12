@@ -280,6 +280,7 @@ exec --no-startup-id discord
 exec --no-startup-id variety
 exec --no-startup-id urxvt -name "gotop" -hold -e gotop -m
 exec --no-startup-id "sleep 3; urxvt -name cava -hold -e cava"
+exec --no-startup-id i3-msg workspace 2:
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show run -theme onedark -lines 5 -opacity "60"
