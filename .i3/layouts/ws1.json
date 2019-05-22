@@ -62,12 +62,13 @@
                        "x": 0,
                        "y": 0
                     },
-                    "name": "layouts - File Manager",
+                    "name": "ranger",
                     "percent": 1,
                     "swallows": [
                        {
-                       "class": "^Thunar$",
-                       "instance": "^thunar$"
+                       "class": "^URxvt$",
+                       "instance": "^ranger$",
+                       "title": "^ranger$"
                        }
                     ],
                     "type": "con"
