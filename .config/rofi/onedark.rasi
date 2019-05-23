@@ -33,6 +33,7 @@
 window {
   fullscreen: false;
   background-color: #161925dd;
+  width: 400;
 }
 
 mainbox {
@@ -50,7 +51,7 @@ prompt {
 
 textbox-prompt-colon {
   expand: false;
-  str: "$";
+  str: ">_";
   text-color: @magenta;
 }
 
