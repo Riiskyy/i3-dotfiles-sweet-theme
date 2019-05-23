@@ -25,13 +25,13 @@ def create_argparse():
     parser.add_argument(
         '-b',
         '--base_color',
-        default = _default('BASE_COLOR', 'green'),
+        default = _default('BASE_COLOR', '#161925'),
         help='base color of the output(default=green)'
     )
     parser.add_argument(
         '-u',
         '--updates_available_color',
-        default = _default('UPDATE_COLOR', 'yellow'),
+        default = _default('UPDATE_COLOR', '#ED254E'),
         help='color of the output, when updates are available(default=yellow)'
     )
     parser.add_argument(
