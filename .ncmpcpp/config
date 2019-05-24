@@ -223,9 +223,9 @@ mpd_crossfade_time = 5
 ## browser_sort_mode are "name", "mtime", "format" and "noop".
 ##
 #
-#browser_sort_mode = name
+browser_sort_mode = format
 #
-#browser_sort_format = {%a - }{%t}|{%f} {(%l)}
+browser_sort_format = {%a - }{%t}|{%f} {(%l)}
 #
 ##### columns settings #####
 ##
