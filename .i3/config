@@ -43,21 +43,20 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
+#bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
+exec --no-startup-id pulseaudio
+exec --no-startup-id pa-applet
+bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
 # Start Applications
 bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 # bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
-bindsym $mod+F3 exec thunar
+bindsym $mod+F3 exec ranger
 bindsym $mod+F5 exec $terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+Ctrl+t exec --no-startup-id compton -b --config ~/.config/compton.blur.conf
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -279,9 +278,10 @@ exec --no-startup-id $terminal -name "home"
 exec --no-startup-id chromium
 exec --no-startup-id variety
 exec --no-startup-id discord
+exec --no-startup-id mopidy
 exec --no-startup-id urxvt -name "gotop" -hold -e gotop -m
 exec --no-startup-id "sleep 3; urxvt -name cava -hold -e cava"
-exec --no-startup-id "sleep 3; urxvt -name mpsyt -hold -e mpsyt"
+exec --no-startup-id "sleep 3; urxvt -name ncmpcpp -hold -e ncmpcpp"
 exec --no-startup-id urxvt -name "ranger" -hold -e ranger
 exec --no-startup-id i3-msg workspace 2:
 
@@ -305,7 +305,7 @@ bar {
     tray_output primary
     bindsym button4 nop
     bindsym button5 nop
-    font pango:InconsolataLGC Nerd Font Bold 9  
+    font pango:InconsolataLGC Nerd Font Bold 9
     # strip_workspace_numbers yes
 
     colors {

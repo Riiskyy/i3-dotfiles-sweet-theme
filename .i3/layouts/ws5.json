@@ -13,8 +13,8 @@
     "swallows": [
        {
        "class": "^URxvt$",
-       "instance": "^mpsyt$",
-       "title": "^mpsyt$"
+       "instance": "^ncmpcpp$",
+       "title": "^ncmpcpp$"
        }
     ],
     "type": "con"
