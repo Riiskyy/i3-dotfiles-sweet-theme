@@ -12,9 +12,7 @@
     "percent": 0.6,
     "swallows": [
        {
-       "class": "^URxvt$",
-       "instance": "^ncmpcpp$",
-       "title": "^ncmpcpp$"
+       "class": "^ncmpcpp$"
        }
     ],
     "type": "con"
@@ -99,12 +97,10 @@
             "percent": 0.3,
             "swallows": [
                {
-               "class": "^URxvt$",
-               "instance": "^cava$"
+               "class": "^cava$"
                }
             ],
             "type": "con"
         }
     ]
 }
-

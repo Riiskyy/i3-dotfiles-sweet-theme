@@ -27,7 +27,7 @@ font pango:Montserrat-regular 10
 floating_modifier $mod
 
 # Set the default terminal
-set $terminal terminal
+set $terminal kitty
 
 # start a terminal
 bindsym $mod+Return exec $terminal
@@ -43,18 +43,19 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
+bindsym $mod+Ctrl+m exec $terminal 'alsamixer'
 #bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
-exec --no-startup-id pulseaudio
-exec --no-startup-id pa-applet
-bindsym $mod+Ctrl+m exec pavucontrol
+# exec --no-startup-id pulseaudio
+# exec --no-startup-id pa-applet
+# bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
 # Start Applications
-bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
+bindsym $mod+Ctrl+b exec $terminal bmenu
 # bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F3 exec ranger
-bindsym $mod+F5 exec $terminal -e 'mocp'
+bindsym $mod+F5 exec $terminal mocp
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b --config ~/.config/compton.blur.conf
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -187,8 +188,8 @@ exec --no-startup-id "i3-msg 'workspace 5:; append_layout /home/tom/.i3/la
 
 # Open applications on specific workspaces
 #assign [class="Thunar"] $ws1
-assign [instance="ranger"] $ws1
-assign [instance="gotop"] $ws1
+assign [class="ranger"] $ws1
+assign [class="gotop"] $ws1
 assign [class="Chromium"] $ws2
 assign [class="Steam"] $ws3
 assign [class="Lutris"] $ws3
@@ -211,6 +212,7 @@ for_window [class="Steam"] floating enable border normal
 for_window [class="Lutris"] floating enable
 for_window [class="Wine"] floating enable
 # for_window [class="discord"] no_focus
+for_window [title="^mopidy$"] move scratchpad
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -274,15 +276,22 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipitd
-exec --no-startup-id $terminal -name "home"
+exec --no-startup-id $terminal --name "home"
 exec --no-startup-id chromium
 exec --no-startup-id variety
 exec --no-startup-id discord
 exec --no-startup-id mopidy
-exec --no-startup-id urxvt -name "gotop" -hold -e gotop -m
-exec --no-startup-id "sleep 3; urxvt -name cava -hold -e cava"
-exec --no-startup-id "sleep 3; urxvt -name ncmpcpp -hold -e ncmpcpp"
-exec --no-startup-id urxvt -name "ranger" -hold -e ranger
+
+#kitty testing
+exec --no-startup-id kitty --class gotop --hold gotop -m
+exec --no-startup-id kitty --class ranger --hold ranger
+exec --no-startup-id "sleep 3; kitty --class cava --hold cava"
+exec --no-startup-id "sleep 3; kitty --class ncmpcpp --hold ncmpcpp"
+
+#exec --no-startup-id urxvt -name "gotop" -hold -e gotop -m
+#exec --no-startup-id "sleep 3; urxvt -name cava -hold -e cava"
+#exec --no-startup-id "sleep 3; urxvt -name ncmpcpp -hold -e ncmpcpp"
+#exec --no-startup-id urxvt -name "ranger" -hold -e ranger
 exec --no-startup-id i3-msg workspace 2:
 
 # start program launcher
