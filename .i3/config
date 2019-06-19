@@ -305,6 +305,7 @@ set $inactive-text-color #7CB7E1
 set $urgent-bg-color     #00C1E4
 set $binding-bg-color	 #7CB7E1
 set $binding-text-color  #161925
+set $indicator-colour    #71F79F
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
@@ -336,10 +337,10 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border              background         text                 indicator
-client.focused            $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused          $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive   $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent             $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+client.focused            $bg-color           $bg-color          $text-color          $indicator-colour
+client.unfocused          $iancative-bg-color $inactive-bg-color $inactive-text-color $indicator-colour
+client.focused_inactive   $iancative-bg-color $inactive-bg-color $inactive-text-color $indicator-colour
+client.urgent             $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-colour
 
 client.background       $bg-color
 

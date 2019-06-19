@@ -26,7 +26,7 @@ mpd_host = localhost
 #
 #mpd_port = 6600
 #
-mpd_connection_timeout = 15
+mpd_connection_timeout = 5
 #
 ## Needed for tag editor and file operations to work.
 ##
@@ -184,7 +184,7 @@ mpd_crossfade_time = 5
 #
 #song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
 #
-#song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
+song_status_format = {%a - {%t}|{%f} - %b}
 #
 #song_library_format = {%n - }{%t}|{%f}
 #
@@ -262,7 +262,7 @@ browser_sort_format = {%a - }{%t}|{%f} {(%l)}
 ##   available.
 ##
 #
-song_columns_list_format = (20)[]{a} (45)[white]{t|f:Title} (30)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (30)[green]{t|f:Title} (30)[red]{a} (20)[cyan]{b} (7f)[magenta]{l}
 #
 ##### various settings #####
 #
@@ -293,9 +293,9 @@ song_columns_list_format = (20)[]{a} (45)[white]{t|f:Title} (30)[cyan]{b} (7f)[m
 ##
 #playlist_display_mode = columns
 #
-#browser_display_mode = classic
+browser_display_mode = columns
 #
-#search_engine_display_mode = classic
+search_engine_display_mode = columns
 #
 #playlist_editor_display_mode = classic
 #
@@ -317,7 +317,13 @@ song_columns_list_format = (20)[]{a} (45)[white]{t|f:Title} (30)[cyan]{b} (7f)[m
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-#progressbar_look = =>
+#progressbar_look = "░█ "
+#progressbar_look = "▉▉▉"
+#progressbar_look = "◾◾◽"
+#progressbar_look = "─╼─"
+#progressbar_look = "___"
+#progressbar_look = "___"
+progressbar_look = "━━─"
 #
 ## Available values: database, playlist.
 ##
@@ -528,7 +534,7 @@ song_columns_list_format = (20)[]{a} (45)[white]{t|f:Title} (30)[cyan]{b} (7f)[m
 #
 #progressbar_color = black:b
 #
-#progressbar_elapsed_color = green:b
+progressbar_elapsed_color = yellow:b
 #
 #statusbar_color = default
 #
